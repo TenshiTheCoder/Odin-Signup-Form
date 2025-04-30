@@ -1,0 +1,87 @@
+/*General reset for spacing and set general flow of the page*/
+body{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Heading Stylings*/
+.header-container{
+  width: 100%;
+  position: relative;
+}
+
+  .main-heading, .subHeading, h3 {
+    font-family: "Sansation", Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: white;
+  }
+
+  h1, h2 {
+    position: absolute;
+    left: 5px;
+  }
+
+  .main-heading{
+    font-size: 20px;
+    left: 10px;
+  }
+
+  .subHeading{
+    font-size: 20px;
+    top: 45px;
+    left: 10px;
+  };
+
+/*Form Styling*/
+label{
+  font-family: "Cal Sans", Arial, Helvetica, sans-serif;
+}
+
+form{
+  position: relative;
+}
+
+.left-column, .right-column{
+  position: absolute; 
+}
+
+/*Image Styling*/
+.sidebarContainer{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.odinImg-caption{
+  position: relative;
+  z-index: 1;
+  text-align: right;
+}
+
+.odin-text{
+  font-family: "Winky Rough", Arial, Helvetica, sans-serif;
+  border: 1px solid rgba(0, 0, 0, .5);
+  padding: 10px;
+  display: inline;
+}
+
+.odin-logo{
+  max-width: 100%;
+  height: 100%;
+}
+
+.odin-background{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+
