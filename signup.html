@@ -20,20 +20,25 @@
     </div>
   </header>
 
-  <main class="main-content">
+  <div class="page-layout">
     <div class="sidebarContainer">
       <div class="odinImg-caption"> 
+        
         <img src="photos/odin-lined.png" class="odin-logo">
         <p class="odin-text">ODIN</p>
       </div>
       <img src="photos/photo-1585202900225-6d3ac20a6962.avif" class="odin-background">
     </div>
+  </div>
 
+  <main class="main-content">
     <h3>Start Here:</h3>
+    
     <form action="" method="get" class="signupForm">
       <div class="leftColumn">
+
         <label for="firstName">First Name:*</label> 
-        <input type="text" id="firstName" class="first-name" name="firstName"  required>
+        <input type="text" id="firstName" class="first-name" name="firstName"  placeholder="John" required>
 
         <label for="email">Email:</label>
         <input type="email" id="email" class="email" maxlength="254" name="email" required>
@@ -51,7 +56,7 @@
       </div>
       <div class="rightColumn">
         <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" class="last-name" name="lastName">
+        <input type="text" id="lastName" class="last-name" name="lastName" placeholder="Doe">
 
         <label for="phoneNumber">Phone Number:</label>
         <input 
@@ -75,10 +80,7 @@
     
         <button type="submit" class="create-button">Create Account</button>
     </form>
-    <p>Already have an account? <a href="">Log In</a></p>
+    <p class="login">Already have an account? <a href="">Log In</a></p>
   </main>
-  <footer>
-    <div class="footer-container"></div>
-  </footer>
 </body>
 </html>

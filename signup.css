@@ -1,25 +1,57 @@
 /*General reset for spacing and set general flow of the page*/
-body{
+html, body{
+  height: 100%;
   margin: 0;
+}
+
+body{
   display: flex;
   flex-direction: column;
 }
 
-/*Heading Stylings*/
-.header-container{
-  width: 100%;
-  position: relative;
+p{
+  width: 150px;
+  margin: 0;
+  padding: 0;
 }
+
+@font-face {
+  font-family: "Norse Bold";
+  src: url("Norse-Bold.otf") format("opentype");
+}
+
+/*Heading Stylings*/
+  .header-container{
+    width: 100%;
+    position: relative;
+  }
 
   .main-heading, .subHeading, h3 {
     font-family: "Sansation", Arial, Helvetica, sans-serif;
     margin: 0;
     color: white;
+    position: absolute;
+    left: 10px;
+  }
+  
+  h3{ 
+    margin: 0;
+    padding: 0;
+    width: 100px;
   }
 
-  h1, h2 {
-    position: absolute;
-    left: 5px;
+  .page-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    flex-grow: 1;
   }
 
   .main-heading{
@@ -40,45 +72,127 @@ label{
 
 form{
   position: relative;
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  width: 300px;
 }
 
-.left-column, .right-column{
-  position: absolute; 
+input{
+  outline:none;
+  height: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px black;
 }
+
+input:focus{
+  border: 2px solid blue;
+}
+
+input:invalid{
+  border: 1px solid red;
+}
+
+input:valid{
+  border: 1px solid greenyellow;
+}
+
+.leftColumn, .rightColumn{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+.create-button{
+  display: inline-block;
+  align-self: flex-start;
+  background-color: olivedrab;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px black;
+}
+
+.login{
+  width: 250px;
+  font-family: "Sansation", Arial, Helvetica, sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: olivedrab;
+  margin-left: 3px;
+}
+
+/* Done for now */
 
 /*Image Styling*/
-.sidebarContainer{
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.odinImg-caption{
-  position: relative;
-  z-index: 1;
-  text-align: right;
-}
-
-.odin-text{
-  font-family: "Winky Rough", Arial, Helvetica, sans-serif;
-  border: 1px solid rgba(0, 0, 0, .5);
-  padding: 10px;
-  display: inline;
-}
-
-.odin-logo{
-  max-width: 100%;
-  height: 100%;
-}
-
-.odin-background{
+.sidebarContainer {
   position: absolute;
   right: 0;
   top: 0;
+  bottom: 0;
+  width: 500px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  order: 2; /* Add this line */
+}
+
+/* Styling for the div containing the Odin Logo and Caption */
+.odinImg-caption {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 200px;
+  width: 500px;
+  top: 50%;
+  right: 50%; /* Changed from 20px to 50% */
+  transform: translate(50%, -50%); /* Center it vertically and horizontally */
+  z-index: 1;
+  text-align: center; /* Center the text */
+}
+
+/* Caption Styling */
+.odin-logo {
+  max-height: 20vh;
+  width: 150px;
+  height: auto;
+  float: left;
+  transform: translate(30px, 8px);
+}
+
+.odin-text {
+  font-family: "Norse Bold", Arial, Helvetica, sans-serif;
+  padding: 10px;
+  font-size: 180px;
+  line-height: 80px;
+  float: right;
+  position: relative;
+  top: 50px; /* Move the text up vertically */
+  margin-right: 150px;
+}
+.sidebarContainer {
+  position: absolute;
+  right: 0; /* Changed from left to right */
+  top: 0; /* Added to make it span from top to bottom */
+  bottom: 0; /* Added to make it span from top to bottom */
+  width: 600px; /* Set a fixed width */
+  height: 100%; /* Make it span the full height */
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+}
+
+.odin-background {
+  position: absolute;
+  right: 0; /* Changed from left to right */
+  top: 0;
+  width: 100%; /* Make it span the full width */
   height: 100%;
   object-fit: cover;
   z-index: 0;
