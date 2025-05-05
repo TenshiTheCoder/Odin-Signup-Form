@@ -1,15 +1,15 @@
 /*General reset for spacing and set general flow of the page*/
-html, body{
+html, body {
   height: 100%;
   margin: 0;
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
 }
 
-p{
+p {
   width: 150px;
   margin: 0;
   padding: 0;
@@ -17,11 +17,26 @@ p{
 
 @font-face {
   font-family: "Norse Bold";
-  src: url("Norse-Bold.otf") format("opentype");
+  src: url("fonts/Norse-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Cal Sans";
+  src: url("fonts/CalSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Sansation-Italic";
+  src: url("fonts/Sansation-BoldItalic.ttf");
 }
 
 /*Heading Stylings*/
-  .header-container{
+  .header-container {
     width: 100%;
     position: relative;
   }
@@ -31,13 +46,33 @@ p{
     margin: 0;
     color: white;
     position: absolute;
-    left: 10px;
+    top: 45px;
+    left: 35px;
   }
   
-  h3{ 
-    margin: 0;
-    padding: 0;
+  .subHeading {
+    top: 240px;
+    left: 665px;
+    font-size: 23px;
+  };
+
+  .start-container {
+    position: relative;
     width: 100px;
+  }
+
+  .start {
+    position: absolute;
+    font-family: "Sansation-Italic", Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    top: 345px;
+    left: 665px;
+  }
+
+  .main-heading {
+    margin: 100px 0 0 625px;
+    font-size: 30px;
+    z-index: 1;
   }
 
   .page-layout {
@@ -47,88 +82,104 @@ p{
   }
   
   .main-content {
-    flex: 1; 
     padding: 20px;
     display: flex;
     flex-direction: column; 
     flex-grow: 1;
   }
 
-  .main-heading{
-    font-size: 20px;
-    left: 10px;
-  }
-
-  .subHeading{
-    font-size: 20px;
-    top: 45px;
-    left: 10px;
-  };
-
 /*Form Styling*/
-label{
+label {
+  margin-top: 10px;
   font-family: "Cal Sans", Arial, Helvetica, sans-serif;
 }
 
-form{
+form {
   position: relative;
   display: flex;
+  top: 35%;
+  left: 10%;
   gap: 50px;
   flex-direction: row;
-  margin: 0;
-  margin-bottom: 15px;
+  margin: 0 0 550px 450px;
   padding: 0;
   width: 300px;
 }
 
-input{
-  outline:none;
-  height: 5px;
-  padding: 10px;
+input {
+  outline: none;
+  width: 250px;
+  height: 15px;
+  padding: 12px;
   border-radius: 8px;
+  border: 1px solid silver;
   box-shadow: 2px 2px 2px 2px black;
+  font-size: 16px;
 }
 
-input:focus{
+input:focus {
   border: 2px solid blue;
 }
 
-input:invalid{
+input:not(:placeholder-shown):invalid {
   border: 1px solid red;
 }
 
-input:valid{
+input:not(:placeholder-shown):not(:focus):invalid{
+  border: 1px solid silver;
+}
+
+input:not(:focus):valid{
+  border-color: silver;
+}
+
+input:valid {
   border: 1px solid greenyellow;
 }
 
-.leftColumn, .rightColumn{
+.leftColumn, .rightColumn {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
 }
 
-.create-button{
-  display: inline-block;
-  align-self: flex-start;
+.create-button {
+  font-family: "Cal Sans", Arial, Helvetica, sans-serif;
+  position: absolute;
+  bottom: 200px;
+  left: 659px;
+  font-size: 18px;
+  width: 200px; /* Narrower width */
+  height: 50px; /* Taller height */
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
   background-color: olivedrab;
+  padding-left: 45px;
+  padding-right: 45px;;
   border: none;
   border-radius: 8px;
   box-shadow: 2px 2px 2px 2px black;
+  transition: background-color 0.5s ease-in-out
 }
 
-.login{
+.create-button:hover {
+  cursor: pointer;
+  background-color: darkolivegreen;
+}
+
+.login {
   width: 250px;
   font-family: "Sansation", Arial, Helvetica, sans-serif;
 }
 
-a{
+a {
   text-decoration: none;
   color: olivedrab;
   margin-left: 3px;
 }
 
-/* Done for now */
+/* Done */
 
 /*Image Styling*/
 .sidebarContainer {
@@ -147,9 +198,9 @@ a{
 /* Styling for the div containing the Odin Logo and Caption */
 .odinImg-caption {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   height: 200px;
-  width: 500px;
+  width: 100%;
   top: 50%;
   right: 50%; /* Changed from 20px to 50% */
   transform: translate(50%, -50%); /* Center it vertically and horizontally */
@@ -162,8 +213,8 @@ a{
   max-height: 20vh;
   width: 150px;
   height: auto;
-  float: left;
-  transform: translate(30px, 8px);
+  float: center;
+  transform: translate(50px, 8px);
 }
 
 .odin-text {
@@ -174,11 +225,12 @@ a{
   float: right;
   position: relative;
   top: 50px; /* Move the text up vertically */
-  margin-right: 150px;
+  margin-right: 185px;
 }
 .sidebarContainer {
   position: absolute;
-  right: 0; /* Changed from left to right */
+  z-index: -1;
+  left: 0; /* Changed from left to right */
   top: 0; /* Added to make it span from top to bottom */
   bottom: 0; /* Added to make it span from top to bottom */
   width: 600px; /* Set a fixed width */
@@ -190,7 +242,7 @@ a{
 
 .odin-background {
   position: absolute;
-  right: 0; /* Changed from left to right */
+  left: 0; /* Changed from left to right */
   top: 0;
   width: 100%; /* Make it span the full width */
   height: 100%;
@@ -198,4 +250,21 @@ a{
   z-index: 0;
 }
 
+
+/* Footer Styling */
+
+  footer {
+
+  }
+
+  .login-container {
+    position: relative;
+  }
+
+  .login {
+    font-family: "Cal Sans", Arial, Helvetica, sans-serif;
+    position: absolute;
+    left: 970px;
+    bottom: 200px;
+  }
 

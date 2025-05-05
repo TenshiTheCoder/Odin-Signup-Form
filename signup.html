@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Angel's Signup Form</title>
-  <link rel="stylesheet" href="signup.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Cal+Sans&family=Gidole&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel's Signup Form</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Cal+Sans&family=Gidole&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header class="header-container">
-    <div class="headings">
-      <h1 class="main-heading">
-        Welcome to Angel's totally (not) real signup form! 
-        This form <br>will magically help you become the best at everything! 
-      </h1>
-      <h2 class="subHeading">Trust me bro, it works!</h2>
-    </div>
-  </header>
+  <body>
+    <header class="header-container">
+      <div class="headings">
+        <h1 class="main-heading">
+          Welcome to Angel's totally (not) real signup form! 
+          This form <br>will magically help you become the best at everything! 
+        </h1>
+        <h2 class="subHeading">Trust me, it works!</h2>
+      </div>
+    </header>
 
   <div class="page-layout">
     <div class="sidebarContainer">
@@ -32,55 +32,77 @@
   </div>
 
   <main class="main-content">
-    <h3>Start Here:</h3>
-    
-    <form action="" method="get" class="signupForm">
-      <div class="leftColumn">
+    <div class="start-container">
+      <span class="start">Start Here:</span>
+    </div>
+      <div class="column-container">
+        <form action="" method="get" class="signupForm">
+          <div class="leftColumn">
+  
+          <label for="firstName">First Name*</label> 
+          <input 
+            type="text" 
+            id="firstName" 
+            class="first-name"
+            name="firstName" 
+            placeholder="John" 
+            pattern="[a-zA-Z]+"
+            minlength="2"
+            maxlength="50"
+            required>
 
-        <label for="firstName">First Name:*</label> 
-        <input type="text" id="firstName" class="first-name" name="firstName"  placeholder="John" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" class="email" maxlength="254" name="email" required>
-
-      <label for="newPassword">Password:</label>
-      <input 
-        required 
-        type="password" 
-        id="newPassword" 
-        class="password" 
-        minlength="12" 
-        maxlength="64"
-        name="newPassword"
-      />
-      </div>
-      <div class="rightColumn">
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" class="last-name" name="lastName" placeholder="Doe">
-
-        <label for="phoneNumber">Phone Number:</label>
-        <input 
-          type="tel" 
-          id="phoneNumber" 
-          class="phone-number" 
-          pattern="[\d\s\-\+\(\)]*" 
-          placeholder="+1 555 555 5555"
-          name="phoneNumber" 
-        />
-
-        <label for="password-confirm">Confirm Password:</label>
+  
+          <label for="email">Email*</label>
+          <input type="email" id="email" class="email" maxlength="254" name="email" required>
+  
+        <label for="newPassword">Password*</label>
         <input 
           required 
           type="password" 
-          id="password-confirm" 
-          class="password-confirm" 
-          name="password-confirm"
+          id="newPassword" 
+          class="password" 
+          minlength="12" 
+          maxlength="64"
+          name="newPassword"
         />
+        </div>
+        <div class="rightColumn">
+          <label for="lastName">Last Name*</label>
+          <input 
+            type="text" 
+            id="lastName" 
+            class="last-name" 
+            name="lastName" 
+            placeholder="Doe"
+            minlength="2"
+            maxlength="100"
+            >
+  
+          <label for="phoneNumber">Phone Number:</label>
+          <input 
+            type="tel" 
+            id="phoneNumber" 
+            class="phone-number" 
+            pattern="[\d\s\-\+\(\)]*" 
+            placeholder="+1 555 555 5555"
+            name="phoneNumber" 
+          />
+  
+          <label for="password-confirm">Confirm Password*</label>
+          <input 
+            required 
+            type="password" 
+            id="password-confirm" 
+            class="password-confirm" 
+            name="password-confirm"
+          />
+        </div>
       </div>
-    
         <button type="submit" class="create-button">Create Account</button>
     </form>
-    <p class="login">Already have an account? <a href="">Log In</a></p>
+    <div class="login-container">
+      <p class="login">Already have an account? <a href="">Log In</a></p>
+    </div>
   </main>
 </body>
 </html>
